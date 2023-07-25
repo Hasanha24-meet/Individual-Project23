@@ -1,0 +1,41 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ADD8E6;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #99D3F5;
+}
+
