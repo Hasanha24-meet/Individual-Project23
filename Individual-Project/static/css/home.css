@@ -1,0 +1,31 @@
+.card {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid black;
+  background-color: #f5f5f5;
+  box-shadow: 0 10px 15px #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px #ccc;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+}
+
+.card-description {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+img {
+  max-width: 50%;
+  max-height: 50%;
+  margin: 0 auto;
+}

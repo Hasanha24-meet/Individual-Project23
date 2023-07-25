@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import session as login_session
 import pyrebase
 
+
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 config = {
@@ -15,6 +16,10 @@ config = {
     "measurementId": "G-1JFXNZXDJV",
     "databaseURL": "https://personal-project-30557-default-rtdb.europe-west1.firebasedatabase.app/"
 }
+firebase = pyrebase.initialize_app(config)
+auth = firebase.auth()
+db = firebase.database()
+
 
 #Code goes below here
 @app.route('/', methods=['GET', 'POST'])
@@ -30,8 +35,9 @@ def signup():
             UID = login_session['user']['localId']
             user = {"first_name": first_name, "email": email, "password": password, "last_name": last_name}
             db.child("Users").child(UID).set(user)
-            return redirect(url('home'))
-        except:
+            return redirect(url_for("home"))
+        except Exception as e:
+            print(e)
             error = "Signup Failed"
     return render_template("index.html")
 
@@ -43,10 +49,16 @@ def login():
         password = request.form['password']
         try:
             login_session['user'] = auth.sign_in_with_email_and_password(email, password)
-            return redirect(url('login.html'))
+            return redirect(url('home'))
         except:
             error = "Authentication Failed"
-    return render_template("/login")
+    return render_template("login.html")
+
+@app.route('/home', methods=['GET', 'POST'])
+def home():
+    return render_template('home.html')
+
+
 
 #Code goes above here
 
