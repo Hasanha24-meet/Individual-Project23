@@ -1,41 +1,73 @@
 body {
-  background-color: lightblue;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  
-  font-size: 40px;
+.navbar {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.jumbotron {
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 20px;
   text-align: center;
 }
 
-form {
-  width: 400px;
+.form-group {
+  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #fff;
 }
 
 label {
+  font-size: 18px;
+  color: #34495e;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
   font-size: 16px;
-  font-weight: bold;
+  border: 2px solid #3498db;
+  border-radius: 5px;
 }
 
-input {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-}
-
-button {
-  background-color: #ADD8E6;
-  color: #fff;
-  padding: 10px;
-  border: none;
+.btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #99D3F5;
+.btn-primary {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #2c3e50;
+}
+
+h4 {
+  color: #333;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
