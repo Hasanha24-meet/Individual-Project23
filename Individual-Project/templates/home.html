@@ -23,13 +23,9 @@
   </div>
 
   <div class="container-fluid">
-    {% for l in t %}
-      <ul class="list-group">
-        <li class="list-group-item">
-          {{l}}
-        </li>
-      </ul>
-    {% endfor %}
+   {% for item in items %}
+   {{items[item]}}
+   {% endfor %}
   </div>
 
 </body>

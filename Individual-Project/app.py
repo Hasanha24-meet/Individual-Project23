@@ -75,9 +75,10 @@ def home():
             try:
                 name = request.form['name']
                 db.child("Users").child(user_id).child("items").push(name)
-                user_data = db.child("Users").child(user_id).get()
-                to = user_data.val() if user_data else []
-                return render_template('home.html', t=to.values())
+                items = db.child("Users").child(user_id).child("items").get().val()
+                # user_data = db.child("Users").child(user_id).get()
+                # to = user_data.val() if user_data else []
+                return render_template('home.html', items=items)
             except:
                 flash("Error adding item. Please try again.", "error")
         elif request.form['submit'] == 'delete':
@@ -88,8 +89,15 @@ def home():
 
     user_data = db.child("Users").child(user_id).get()
     to = user_data.val() if user_data else []
-    return render_template('home.html', t=to.values())
+    return render_template('home.html')
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
+

@@ -5,62 +5,57 @@ body {
   padding: 0;
 }
 
-.navbar {
-  background-color: #2c3e50;
-  color: #ffffff;
-  padding: 10px;
+h1 {
+  color: #3498db;
 }
 
-.navbar h1 {
-  margin: 0;
+h4 {
+  color: #333;
 }
 
-.jumbotron {
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-}
-
-.form-group {
+form {
   max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: scale(1.05);
 }
 
 label {
-  font-size: 18px;
-  color: #34495e;
+  font-size: 16px;
+  color: #333;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 93.5%;
   padding: 10px;
   font-size: 16px;
   border: 2px solid #3498db;
   border-radius: 5px;
 }
 
-.btn {
-  padding: 10px 20px;
-  margin-top: 10px;
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.btn-primary {
-  background-color: #3498db;
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background-color: #2c3e50;
-}
-
-h4 {
-  color: #333;
+input[type="submit"]:hover {
+  background-color: #2980b9;
 }
 
 a {
@@ -70,4 +65,41 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Easter Egg - Rotate the title on hover */
+h1:hover {
+  animation: rotateTitle 2s infinite;
+}
+
+@keyframes rotateTitle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Easter Egg - Random color changes on hover */
+h4:hover {
+  animation: randomColor 1s infinite;
+}
+
+@keyframes randomColor {
+  0% {
+    color: #333;
+  }
+  25% {
+    color: #e74c3c;
+  }
+  50% {
+    color: #27ae60;
+  }
+  75% {
+    color: #f1c40f;
+  }
+  100% {
+    color: #3498db;
+  }
 }
